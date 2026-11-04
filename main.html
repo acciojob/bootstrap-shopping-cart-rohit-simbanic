@@ -1,16 +1,227 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Layout</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Headings color */
+        h1, h2, h3, h4, h5, h6, .custom-heading-color {
+            color: #3b99e0;
+        }
+
+        /* Block Heading styling */
+        .block-heading {
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+
+        .block-heading p {
+            max-width: 600px;
+            margin: auto;
+            color: #6c757d;
+        }
+
+        /* Main Cart Container */
+        .cart-wrapper {
+            background: #fff;
+            box-shadow: 0px 2px 15px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        /* Product Block styling */
+        .product {
+            padding: 30px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .product:last-child {
+            border-bottom: none;
+        }
+
+        .product-specs p {
+            margin-bottom: 2px;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+
+        .quantity-input {
+            width: 70px;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        /* Summary Block styling */
+        .summary {
+            background-color: #f7fbff;
+            border-top: 4px solid #5ea4f3;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .summary h3 {
+            color: #333; 
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            border-bottom: 1px solid #e6e6e6;
+            color: #495057;
+        }
+
+        .summary-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .btn-checkout {
+            background-color: #3b99e0;
+            color: #fff;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .btn-checkout:hover {
+            background-color: #2b7bb8;
+            color: #fff;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
 
+    <!-- Block Heading -->
+    <div class="block-heading">
+        <h2>Shopping cart</h2>
+        <p>The customer is very important, the customer will be followed by the customer. Now, as an urn, I have no right to be in possession of property.</p>
+    </div>
+
+    <div class="container">
+        <!-- Main Layout -->
+        <div class="row cart-wrapper m-0">
+            
+            <!-- Left Column: Products -->
+            <div class="col-lg-8 p-0">
+                
+                <!-- Product 1 -->
+                <div class="product">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=150&q=80&auto=format&fit=crop" alt="Phone" class="img-fluid me-4" style="max-height: 120px; border-radius: 8px;">
+                            <div class="product-specs">
+                                <h5 class="custom-heading-color mb-2">I am very sorry</h5>
+                                <p>Display: 5 inches</p>
+                                <p>RAM: 4GB</p>
+                                <p>Memory: 32GB</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between align-items-center mt-3 mt-md-0 px-4">
+                            <div>
+                                <label class="d-block text-dark mb-1">Quantity:</label>
+                                <input type="number" value="0" class="form-control quantity-input">
+                            </div>
+                            <div class="price-tag text-dark">$120</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=150&q=80&auto=format&fit=crop" alt="Phone" class="img-fluid me-4" style="max-height: 120px; border-radius: 8px;">
+                            <div class="product-specs">
+                                <h5 class="custom-heading-color mb-2">I am very sorry</h5>
+                                <p>Display: 5 inches</p>
+                                <p>RAM: 4GB</p>
+                                <p>Memory: 32GB</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between align-items-center mt-3 mt-md-0 px-4">
+                            <div>
+                                <label class="d-block text-dark mb-1">Quantity:</label>
+                                <input type="number" value="1" class="form-control quantity-input">
+                            </div>
+                            <div class="price-tag text-dark">$120</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=150&q=80&auto=format&fit=crop" alt="Phone" class="img-fluid me-4" style="max-height: 120px; border-radius: 8px;">
+                            <div class="product-specs">
+                                <h5 class="custom-heading-color mb-2">I am very sorry</h5>
+                                <p>Display: 5 inches</p>
+                                <p>RAM: 4GB</p>
+                                <p>Memory: 32GB</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between align-items-center mt-3 mt-md-0 px-4">
+                            <div>
+                                <label class="d-block text-dark mb-1">Quantity:</label>
+                                <input type="number" value="1" class="form-control quantity-input">
+                            </div>
+                            <div class="price-tag text-dark">$120</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Summary Block -->
+            <div class="col-lg-4 p-0">
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span>$360</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Discount</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="summary-item border-0 mt-2">
+                        <span>Total</span>
+                        <span>$360</span>
+                    </div>
+                    <button class="btn btn-checkout">checkout</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
